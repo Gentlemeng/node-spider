@@ -51,16 +51,19 @@ function startRequest(x) {
                 arr.push(data[j])
             }
             const initTitle=['时间','1688采购指数','1688供应指数','淘宝供应指数'],items=[];
-            for(var i=0;i<arr.length;i++){
+            items.push(initTitle);
+            // for(var i=0;i<arr.length;i++){
                 
-                for(var item=0;i<arr[i];item++){
-                    
+                for(var j=0;j<arr[0].length;j++){
+                    var two=[];
+                    two.push(null,arr[0][j],arr[1][j],arr[2][j])
+                    items.push(two)
                 }
-                var 
-            }
+                
+            // }
             savedContent($,text_title,data);
             // const data1 = [[1, 2, 3], [true, false, null, 'sheetjs'], ['foo', 'bar', new Date('2014-02-19T14:30Z'), '0.3'], ['baz', null, 'qux']];            
-            saveXlsx($,text_title,[{name:'xx',data:data1}]);
+            saveXlsx($,text_title,[{name:'sheet',data:items}]);
         })
     }).on('error', function (error) {
         console.log(error)
@@ -79,6 +82,6 @@ function savedContent ($,title,content) {
 //生成xlsx 格式
 function saveXlsx($,title,content){
     var file = xlsx.build(content);
-    fs.writeFileSync(title+'.xlsx', file,{'flag':'w'});
+    fs.writeFileSync('./data/'+title+'.xlsx', file,{'flag':'w'});
 }
 fetchPage(url);
