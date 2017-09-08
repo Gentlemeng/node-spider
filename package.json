@@ -1,0 +1,19 @@
+{
+  "name": "01test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "node-xlsx": "^0.11.0",
+    "request": "^2.81.0",
+    "reuqest": "^2.81.1",
+    "xlsx": "^0.11.3"
+  }
+}
